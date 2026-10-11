@@ -1,0 +1,43 @@
+customer_name   = input("Enter customer name:")
+quantity_burger = int(input("How many burgers are you ordering? "))
+beef   = float(input("Enter weight of beef patty per burger (in grams) :"))
+cheese = float(input("Enter number of cheese slices per burger :"))
+sauce  = float(input("Enter tablespoons of sauce per burger :"))
+
+bun_cal = 150
+beef_cal = 2.50 * beef
+cheese_cal = 70 * cheese
+sauce_cal = 60 * sauce
+
+total_cal = bun_cal + beef_cal + cheese_cal + sauce_cal
+bun_percentage = (bun_cal / total_cal) * 100
+beef_percentage = (beef_cal / total_cal) * 100
+cheese_percentage = (cheese_cal / total_cal) * 100
+sauce_percentage = (sauce_cal / total_cal) * 100
+totalallcal = total_cal * quantity_burger
+
+beefprice = beef * 0.04
+cheeseprice = cheese * 1
+sauceprice = sauce * 0.5
+eachcostburger = 2 + beefprice + cheeseprice + sauceprice
+totalcost = eachcostburger * quantity_burger
+
+print ("=" * 100)
+print ("                                  FOODSQUAT BURGER NUTRITION & COST       ")
+print ("=" * 100)
+print ("Customer Name:", customer_name)
+print ("Quantity of Burger :",quantity_burger)
+print ("-" * 100)
+print ("CALORIES & COST BREAKDOWN (per burger):")
+print ("- Bun Base:                ",(f"{bun_cal:.2f} kcal"), (f"({bun_percentage:.2f}%)"),        "|", " RM 2.00 ")
+print ("- Beef Patty:              ",(f"{beef_cal:.2f} kcal"), (f"({beef_percentage:.2f}%)"),    "|",(f" RM{beefprice:.2f}"),(f"({beef}g)"))
+print ("- Cheese Slices:           ",(f"{cheese_cal:.2f} kcal"), (f"({cheese_percentage:.2f}%)"),"|",(f" RM{cheeseprice:.2f}"),(f"({cheese} slice/s)"))
+print ("- Extra Sauce:             ",(f"{sauce_cal:.2f} kcal"), (f"({sauce_percentage:.2f}%)"),"|",  (f" RM{sauceprice:.2f}"),(f"({sauce} tbsp)"))
+print ("-" * 100)
+print ((f"TOTAL EACH BURGER:          {total_cal:.2f} kcal        "),"|",(f"RM{eachcostburger:.2f}"))
+print ("-" * 100)
+print ((f"GRAND TOTAL CALORIES:      {totalallcal:.2f} kcal"))
+print ("TOTAL MENU COST:                                ","|"," RM",totalcost)
+print ("=" * 100)
+print ("                                  Eat Wisely for Healthy Living!                                                   ")
+print ("=" * 100)
